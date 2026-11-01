@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans Devanagari', 'Nirmala UI', 'Segoe UI', sans-serif;
+  --color-navy: #123b63;
+  --color-navy-deep: #0c2a48;
+  --color-blue: #1b5e91;
+  --color-saffron: #e89b3c;
+  --color-success: #23834b;
+  --color-warning: #c78318;
+  --color-danger: #b42332;
+  --color-canvas: #f4f7fa;
+  --color-ink: #202b36;
+  --color-muted: #64748b;
+  --color-line: #d9e2ec;
+}
+
+html {
+  color-scheme: light;
+  background: #f4f7fa;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f7fa;
+  color: #202b36;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #1b5e91;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #d6e6f3;
+  color: #102033;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3.5rem;
+  z-index: 80;
+  background: #ffffff;
+  color: #123b63;
+  border: 1px solid #123b63;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0.45rem;
+}
+
+[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
