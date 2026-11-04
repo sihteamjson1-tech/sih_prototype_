@@ -93,7 +93,7 @@ export function Home() {
             deskNote: 'Role selection is a demonstration feature. In production, enforce permissions on the server.',
         };
     return (<div>
-      <section className="border-b border-line bg-[linear-gradient(180deg,#f8fbfe_0%,#f4f7fa_100%)]">
+      <section className="page-hero border-b border-line">
         <Container className="grid items-center gap-10 py-10 lg:grid-cols-[1.15fr_0.85fr] lg:py-14">
           <div>
             <p className="text-xs font-semibold tracking-[0.14em] text-blue">{copy.eyebrow}</p>

@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { AssistantChat } from '../feedback/AssistantChat.jsx';
 import { GovHeader } from './GovHeader.jsx';
 import { SiteFooter } from './SiteFooter.jsx';
 export function Layout() {
@@ -8,5 +9,6 @@ export function Layout() {
         <Outlet />
       </main>
       <SiteFooter />
+      <AssistantChat />
     </div>);
 }

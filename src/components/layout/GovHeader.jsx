@@ -1,15 +1,15 @@
-import { Accessibility, Lock, LogOut } from 'lucide-react';
+import { Accessibility, Lock, LogOut, Moon, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext.jsx';
 import { ROLE_PATH, useSession } from '../../context/SessionContext.jsx';
 import { useUi } from '../../context/UiContext.jsx';
-import { buttonClass } from '../../utils/format.js';
+import { buttonClass, cn } from '../../utils/format.js';
 import { roleLabel } from '../../utils/labels.js';
 import { Container, Emblem, TricolourMark } from './Chrome.jsx';
 import { NavBar } from '../navigation/NavBar.jsx';
 export function GovHeader() {
     const { lang, messages, setLang } = useLanguage();
-    const { scale, setScale } = useUi();
+    const { scale, setScale, theme, setTheme } = useUi();
     const { user, logout } = useSession();
     return (<header className="no-print">
       <a className="skip-link" href="#main-content">
@@ -24,7 +24,7 @@ export function GovHeader() {
               <p className="text-white/80">{messages.ministry}</p>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <div className="ml-auto flex flex-wrap items-center justify-end gap-x-3 gap-y-1">
             <a className="hover:underline" href="#main-content">
               {messages.skip}
             </a>
@@ -72,7 +72,18 @@ export function GovHeader() {
               <p className="max-w-xl text-sm text-blue">{messages.tagline}</p>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col items-end gap-3">
+            <div className="inline-flex overflow-hidden rounded-sm border-2 border-navy" role="group" aria-label={messages.theme}>
+              <button type="button" aria-pressed={theme === 'light'} aria-label={messages.lightMode} className={cn('inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold', theme === 'light' ? 'bg-navy text-white' : 'bg-[#ffffff] text-[#123B63]')} onClick={() => setTheme('light')}>
+                <Sun className="h-4 w-4" aria-hidden="true"/>
+                {messages.light}
+              </button>
+              <button type="button" aria-pressed={theme === 'dark'} aria-label={messages.darkMode} className={cn('inline-flex items-center gap-1.5 border-l-2 border-navy px-3 py-1.5 text-sm font-semibold', theme === 'dark' ? 'bg-[#071422] text-white' : 'bg-[#ffffff] text-[#123B63]')} onClick={() => setTheme('dark')}>
+                <Moon className="h-4 w-4" aria-hidden="true"/>
+                {messages.dark}
+              </button>
+            </div>
+            <div className="flex flex-wrap items-center justify-end gap-4">
             <div className="text-sm">
               <p className="flex items-center gap-2 font-semibold text-navy">
                 <Lock className="h-4 w-4" aria-hidden="true"/>
@@ -95,11 +106,12 @@ export function GovHeader() {
               </div>) : (<Link className={buttonClass('primary')} to="/login">
                 {messages.login}
               </Link>)}
+            </div>
           </div>
         </Container>
         <div className="flex h-1" aria-hidden="true">
           <span className="h-full flex-1 bg-[#FF9933]"/>
-          <span className="h-full flex-1 bg-white"/>
+          <span className="h-full flex-1 bg-[#ffffff]"/>
           <span className="h-full flex-1 bg-[#138808]"/>
         </div>
       </div>

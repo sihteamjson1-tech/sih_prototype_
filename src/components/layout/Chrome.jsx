@@ -13,7 +13,7 @@ export function Emblem({ className = 'h-14 w-14' }) {
 export function TricolourMark() {
     return (<span className="inline-flex h-3.5 w-5 shrink-0 overflow-hidden border border-white/40" aria-hidden="true">
       <span className="h-full w-1/3 bg-[#FF9933]"/>
-      <span className="h-full w-1/3 bg-white"/>
+      <span className="h-full w-1/3 bg-[#ffffff]"/>
       <span className="h-full w-1/3 bg-[#138808]"/>
     </span>);
 }

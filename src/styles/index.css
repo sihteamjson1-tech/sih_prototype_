@@ -20,6 +20,23 @@ html {
   background: #f4f7fa;
 }
 
+html.dark {
+  color-scheme: dark;
+  background: #101920;
+  --color-canvas: #101920;
+  --color-ink: #e6eef6;
+  --color-muted: #a9b9c9;
+  --color-line: #2c4156;
+}
+
+.page-hero {
+  background: linear-gradient(180deg, #f8fbfe 0%, #f4f7fa 100%);
+}
+
+html.dark .page-hero {
+  background: linear-gradient(180deg, #152232 0%, #101920 100%);
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -27,6 +44,63 @@ body {
   color: #202b36;
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+}
+
+html.dark body {
+  background: #101920;
+  color: #e6eef6;
+}
+
+html.dark .bg-white {
+  background-color: #172433;
+}
+
+html.dark .text-navy {
+  color: #d7e6f4;
+}
+
+html.dark .text-blue {
+  color: #8ec4ea;
+}
+
+html.dark .border-navy {
+  border-color: #8eb4d4;
+}
+
+html.dark .border-t-navy {
+  border-top-color: #8eb4d4;
+}
+
+html.dark .bg-\[\#e8eef4\],
+html.dark .bg-\[\#e8f1f8\],
+html.dark .bg-\[\#E8F1F8\] {
+  background-color: #1c3348;
+  color: #d7e6f4;
+}
+
+html.dark .bg-\[\#fff8ef\] {
+  background-color: #2a2418;
+}
+
+html.dark .border-\[\#f3e2c8\] {
+  border-color: #4a3b28;
+}
+
+html.dark .hover\:bg-\[\#e8f1f8\]:hover {
+  background-color: #243e58;
+}
+
+html.dark .hover\:bg-\[\#fdecee\]:hover {
+  background-color: #3a2226;
+}
+
+html.dark .bg-\[\#d9e2ec\] {
+  background-color: #31465c;
+}
+
+html.dark ::selection {
+  background: #1d4e73;
+  color: #f4f8fb;
 }
 
 #root {
@@ -45,6 +119,18 @@ body {
 ::selection {
   background: #d6e6f3;
   color: #102033;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
@@ -73,7 +159,24 @@ body {
     display: none !important;
   }
 
-  body {
+  html.dark,
+  html.dark body {
     background: #ffffff;
+    color: #202b36;
+  }
+
+  html.dark .bg-white,
+  html.dark .page-hero,
+  html.dark .bg-\[\#fff8ef\],
+  html.dark .bg-\[\#e8eef4\],
+  html.dark .bg-\[\#e8f1f8\],
+  html.dark .bg-\[\#E8F1F8\] {
+    background: #ffffff;
+    color: #202b36;
+  }
+
+  html.dark .text-navy,
+  html.dark .text-blue {
+    color: #123b63;
   }
 }
