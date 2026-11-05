@@ -380,6 +380,14 @@ html.is-mobile-app body {
   color: #123b63;
 }
 
+.m-notice-strong,
+.m-notice.device-note,
+html.dark .m-notice.device-note {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
 .m-notice-warning {
   background: #fff4e4;
   color: #6a4510;

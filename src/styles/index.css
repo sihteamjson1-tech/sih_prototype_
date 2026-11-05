@@ -107,6 +107,13 @@ html.dark ::selection {
   min-height: 100vh;
 }
 
+.device-note,
+html.dark .device-note {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
 :focus:not(:focus-visible) {
   outline: none;
 }

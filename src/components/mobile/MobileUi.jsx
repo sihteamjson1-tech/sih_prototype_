@@ -17,8 +17,8 @@ export function Screen({ kicker, title, lede, children }) {
     </section>);
 }
 
-export function Notice({ tone = 'info', children }) {
-    return <div className={`m-notice m-notice-${tone}`} role={tone === 'danger' ? 'alert' : 'status'}>{children}</div>;
+export function Notice({ tone = 'info', className = '', children }) {
+    return <div className={`m-notice m-notice-${tone} ${className}`} role={tone === 'danger' ? 'alert' : 'status'}>{children}</div>;
 }
 
 export function BtnLink({ to, variant = 'primary', children }) {

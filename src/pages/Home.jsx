@@ -93,8 +93,8 @@ export function Home() {
             deskNote: 'Role selection is a demonstration feature. In production, enforce permissions on the server.',
         };
     return (<div>
-      <div className="border-b border-line bg-[#e8f1f8]">
-        <Container className="py-3 text-sm font-medium leading-6 text-navy">
+      <div className="device-note border-b border-black">
+        <Container className="py-3 text-sm leading-6">
           This website is optimized for both mobile and desktop devices. You can access it seamlessly from either.
         </Container>
       </div>

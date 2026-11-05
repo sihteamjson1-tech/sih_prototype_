@@ -64,7 +64,7 @@ export function MobileHome() {
     const documents = portal.applications.reduce((sum, item) => sum + item.documents.length, 0);
     const findings = portal.applications.reduce((sum, item) => sum + item.checks.length, 0);
     return (<div className="m-stack" style={{ marginTop: 0 }}>
-      <Notice>
+      <Notice className="device-note">
         This website is optimized for both mobile and desktop devices. You can access it seamlessly from either.
       </Notice>
       <section className="m-hero">
