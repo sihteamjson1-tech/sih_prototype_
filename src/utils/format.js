@@ -47,9 +47,15 @@ export function formatDay(iso, lang) {
         timeZone: 'Asia/Kolkata',
     }).format(date);
 }
+function randomToken() {
+    if (typeof crypto.randomUUID === 'function')
+        return crypto.randomUUID().replaceAll('-', '');
+    const bytes = new Uint8Array(8);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+}
 export function createId(prefix) {
-    const rand = crypto.randomUUID().replaceAll('-', '').slice(0, 10);
-    return `${prefix}-${rand}`;
+    return `${prefix}-${randomToken().slice(0, 10)}`;
 }
 export function safeFileName(value) {
     const cleaned = value.replaceAll(/[^a-zA-Z0-9._-]+/g, '-').replaceAll(/-+/g, '-');
